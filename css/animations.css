@@ -1,0 +1,62 @@
+/* Button Hover Effects */
+.auth-button, .cart-button {
+    transform: translateY(0);
+    transition: transform var(--transition-fast);
+}
+
+.auth-button:hover, .cart-button:hover {
+    transform: translateY(-2px);
+}
+
+/* Product Card Hover */
+.product-card {
+    transition: transform var(--transition-normal);
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.product-card:hover {
+    transform: rotateY(10deg);
+}
+
+/* Loading Spinner */
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    border-top-color: var(--color-primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Wishlist Heart Animation */
+@keyframes heartBeat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.wishlist-btn.active {
+    animation: heartBeat 0.3s ease-in-out;
+    color: var(--color-accent);
+}
+
+/* Modal Animation */
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-content {
+    animation: modalFadeIn 0.3s ease-out;
+} 

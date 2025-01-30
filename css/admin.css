@@ -1,0 +1,140 @@
+.admin-container {
+    padding: 2rem;
+    margin-top: 70px;
+}
+
+.admin-content {
+    background: var(--gradient-surface);
+    border-radius: 12px;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.admin-content h2 {
+    color: var(--color-primary);
+    margin-bottom: 2rem;
+}
+
+.user-list {
+    margin-bottom: 2rem;
+}
+
+.user-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.user-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logout-button {
+    background: var(--gradient-accent);
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    color: var(--color-text);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.logout-button:hover {
+    box-shadow: var(--neon-accent);
+}
+
+/* 响应式样式 */
+@media screen and (max-width: 768px) {
+    .admin-container {
+        padding: 1rem;
+        margin-top: 60px;
+    }
+
+    .admin-content {
+        padding: 1rem;
+    }
+
+    .admin-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .user-list li {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
+        padding: 0.8rem;
+    }
+
+    .user-list button {
+        width: 100%;
+        padding: 0.5rem;
+    }
+
+    .add-user-btn {
+        width: 100%;
+        padding: 0.8rem;
+    }
+
+    /* 添加用户模态框 */
+    #addUserModal .modal-content {
+        width: 90%;
+        margin: 0 1rem;
+        padding: 1.5rem;
+    }
+
+    .add-user-form input {
+        font-size: 16px; /* 防止 iOS 自动缩放 */
+    }
+
+    /* 退出按钮 */
+    .logout-button {
+        padding: 0.4rem 0.8rem;
+    }
+
+    .logout-button .text {
+        font-size: 0.9rem;
+    }
+}
+
+/* 适配超小屏幕 */
+@media screen and (max-width: 320px) {
+    .admin-container {
+        padding: 0.8rem;
+    }
+
+    .admin-content {
+        padding: 0.8rem;
+    }
+
+    .admin-content h2 {
+        font-size: 1.3rem;
+    }
+}
+
+/* 触摸设备优化 */
+@media (hover: none) {
+    .add-user-btn:active,
+    .user-list button:active,
+    .logout-button:active {
+        transform: scale(0.95);
+    }
+}
+
+/* 安全区域适配（适配刘海屏等） */
+@supports (padding: env(safe-area-inset-top)) {
+    .navbar {
+        padding-top: env(safe-area-inset-top);
+        height: calc(60px + env(safe-area-inset-top));
+    }
+
+    .admin-container {
+        margin-top: calc(60px + env(safe-area-inset-top));
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+} 
